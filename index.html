@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+    </style>
+
+    <body>
+        <h1>Simple Webpage Generator</h1>
+        <table>
+            <tbody>
+                <tr>
+                    <th>Item</th>
+                    <th>Description</th>
+                    <th>Function</th>
+                </tr>
+                <tr>
+                    <td><strong>Open</strong></td>
+                    <td>Open the webpage design window</td>
+                    <td><button class="buttons" onclick="openWindow()">Open</button></td>
+                </tr>
+                <tr>
+                    <td>Title</td>
+                    <td>Create a Title</td>
+                    <td><button class="buttons" onclick="addTitle()">Add Title</button></td>
+                </tr>
+                <tr>
+                    <td>Body</td>
+                    <td>Create a body</td>
+                    <td><button class="buttons" onclick="addBody()">Add Body</button></td>
+                </tr>
+                <tr>
+                    <td>Page Break</td>
+                    <td>Create a Page break</td>
+                    <td><button class="buttons" onclick="addPageBreak()">Add Page Break</button></td>
+                </tr>
+                <tr>
+                    <td>Emojis</td>
+                    <td>Add Emojis</td>
+                    <td><button class="buttons" onclick="addEmojis()">Add Emojis</button></td>
+                </tr>
+                <tr>
+                    <td>Background Color</td>
+                    <td>Add a Background Color</td>
+                    <td><button class="buttons" onclick="addBColor()">Add Background Color</button></td>
+                </tr>
+                <tr>
+                    <td>Font</td>
+                    <td>Change the Font </td>
+                    <td><button class="buttons" onclick="Garamond()">Garamond</button><button
+                        class="buttons" onclick="Verdana()">Verdana</button><button
+                        class="buttons" onclick="Arial()">Arial</button><button
+                        class="buttons" onclick="Impact()">Impact</button><button
+                        class="buttons" onclick="Comic()">Comic Sans</button></td>
+                </tr>
+                <tr>
+                    <td>Text Color</td>
+                    <td>Change the Text Color</td>
+                    <td><button class="buttons" onclick="addTColor()">Add Text Color</button></td>
+                </tr>
+                <tr>
+                    <td>Button</td>
+                    <td>Add a Button</td>
+                    <td><button class="buttons" onclick="addButton()">Add
+                        Button</button></td>
+                </tr>
+                <tr>
+                    <td>Image</td>
+                    <td>Add a Image</td>
+                    <td><button class="buttons" onclick="addImage()">Add Image</button></td>
+                </tr>
+                <tr>
+                    <td>Video Link</td>
+                    <td>Add a Youtube Link</td>
+                    <td><button class="buttons" onclick="addVideo()">Add Video</button></td>
+                </tr>
+                <tr>
+                    <td>Examples</td>
+                    <td>Open the Example Window</td>
+                    <td><button class="buttons" onclick="addExample()">Add Example</button></td>
+                </tr>
+                <tr>
+                    <td>HyperLink</td>
+                    <td>Add a Link</td>
+                    <td><button class="buttons" onclick="addLink()">Add HyperLink</button></td>
+                </tr>
+                <tr>
+                    <td>Link Button</td>
+                    <td>Add a Button for the Link</td>
+                    <td><button class="buttons" onclick="addButtonLink()">Add Button Link</button></td>
+                </tr>
+                <tr>
+                    <td>Input Box</td>
+                    <td>Add a Input Text Box</td>
+                    <td><button class="buttons" onclick="addInputBox()">Add Input Box</button></td>
+                </tr>
+                <tr>
+                    <td>Unordered List</td>
+                    <td>Add Bullets Points</td>
+                    <td><button class="buttons" onclick="addUnordered()">Add Bullet Points</button></td>
+                </tr>
+                <tr>
+                    <td>Ordered List</td>
+                    <td>Add an Numbered List</td>
+                    <td><button class="buttons" onclick="addOrdered()">Add Numbered List</button></td>
+                </tr>
+                <tr>
+                    <td>Italic Text</td>
+                    <td>Add some Italicized Text</td>
+                    <td><button class="buttons" onclick="addItalic()">Add Italicized Text</button></td>   
+                </tr>
+                <tr>
+                    <td>Quotes</td>
+                    <td>Add some Text in Quotation</td>
+                    <td><button class="buttons" onclick="addQuotation()">Add Quoted Text</button></td> 
+                </tr>
+                <tr>
+                    <td>Close</td>
+                    <td>Close the webpage design window</td>
+                    <td><button class="buttons" onclick="closeWindow()">Close</button></td>
+                </tr>
+            </tbody> 
+        </table>
+    <h2>Features</h2>
+        <table>
+            <tbody>
+                <tr>
+                    <td>HTML</td>
+                    <td>CSS</td>
+                    <td>Javascript</td>
+                    <td>XML</td>
+                </tr>
+                <tr>
+                    <td>Table</td>
+                    <td>Background Color</td>
+                    <td>Window</td>
+                    <td>None</td>
+                </tr>
+                 <tr>
+                    <td>Text</td>
+                    <td>Color</td>
+                    <td>Event-driven Programming</td>
+                    <td>None</td>
+                </tr>
+                <tr>
+                    <td>Table</td>
+                    <td>Background Color</td>
+                    <td>None</td>
+                    <td>None</td>
+                </tr>                               
+        </table>
+        <script>
+                var page = "<p>Webpage</p>";
+                var style = " ";
+                var htmlStartTag = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title></title><link rel="stylesheet" href="./style.css"><link rel="icon" href="./favicon.ico" type="image/x-icon"></head>';
+                var htmlEndTag = '</html';
+                var bodyStartTag = '<body>';
+                var bodyEndTag = '</body>';
+                var script = " ";
+
+                var myWindow = null; 
+                function openWindow() {
+                    if(myWindow != null) myWindow.close();
+                    window = window.open("", "Webpage", "width=800, height=168");
+                    window.document.write(htmlStartTag + style + script + bodyStartTag + page + bodyEndTag + htmlEndTag);
+                }
+
+                function addTitle() {
+                    var title = prompt("Enter the title:");
+                    var headingSize= prompt("Enter the size of the title");
+                    page += "<h" + headingSize + ">" + title + "</h" + headingSize + ">";
+                }
+
+                function addBody() {
+                    var body = prompt("Enter the text: ");
+                    page += "<p>" + body + "</p>";
+                }
+
+                function addPageBreak() {
+                    page += "<br>";
+                }
+                
+                function addEmojis() {
+                    var choice = prompt("Enter the following value for your choice Happy: (&#128512;) Smile: (&#128513;) Laughing: (&#128514;)");
+                    page += "<p>" + choice + "</p>";
+                }
+
+                function addBColor() {
+                    var background = prompt("Enter your background choice: aqua, black, blue, fuchsia, gray (or grey), green, lime, maroon, navy, olive, purple, red, silver, teal, white, or yellow: "); 
+                    style += "<style> body {background-color: " + background + ";} </style>";
+                }
+                function Garamond(){
+                    style += "<style> body {font-family: Garamond, serif;}</style>";
+                }
+
+                function Verdana(){
+                    style += "<style> body {font-family: Verdana, sans-serif;}</style>";
+                }
+
+                function Arial(){
+                    style += "<style> body {font-family: Arial, serif;}</style>";
+                }
+
+                function Impact(){
+                    style += "<style> body {font-family: Impact;}</style>";
+                }
+
+                function Comic(){
+                    style += "<style> body {font-family: Comic Sans MS, Comic Sans, cursive;} </style>";
+                }
+
+                function addTColor() {
+                    var tcolor = prompt("Enter your background choice: aqua, black, blue, fuchsia, gray (or grey), green, lime, maroon, navy, olive, purple, red, silver, teal, white, or yellow: ");
+                    style += "<style>body {color: " + x + ";}</style>";
+                }
+
+                function addButton() {
+                    var buttonName = prompt("What do you want the button to say?");
+                    page += "<button>" + buttonName + "</button>";
+                }
+
+                function addImage() {
+                    var image = prompt("Please paste the link to the image: ");
+                    var width = prompt("How wide do you want the image to be? (in pixels");
+                    var height = prompt("How tall do you want the image to be? (in pixels");
+                    page += '<img src="' + image + '" alt=" " width="' + width + '" height="' + height + '">';
+                }
+
+                function addVideo() {
+                    var video = prompt("Please paste the link to the video: ");
+                    page += "<iframe width=" + "\"" + "420" + "\"" + "height="+ "\"" + "345" + "\"" + "src=" + "\"" + video + "?controls=0" + "> </iframe>";
+                }
+
+                function addLink() {
+                    var link = prompt("Please paste the link here: ");
+                    var linkName = prompt("What do you want the link to display as?");
+                    page += "<a href='" + link +  "'>" + linkName + "</a>";
+                }
+
+                function addButtonLink() {
+                    var link = prompt("Please paste the link here: ");
+                    var linkName = prompt("What do you want the link to display as?");
+                    page += "<a href='" + link + "'><button>" + linkName + "</button></a>";
+                }
+
+                function addInputBox() {
+                    var prompt = prompt("Enter the input text to be entered: ");
+                    page +=  "<label for='prompt'>" + prompt + "</label> <input type='text' id='fname' name='fname'>";
+                }
+
+                function addUnordered() {
+                    var size = prompt("Enter the size of the list: ");
+                    var input = [];
+                    
+                    for(var i=0; i < size; i++) {
+                        input.push(prompt("Enter your bullet points(MAX 5) and click enter"));
+                    }
+                    page += "<ul>";
+                    for(var i=0; i<size;i++){
+                        page += "<li>" + input[i] + "</li>";
+                    }
+                    
+                    page += "</ul>";
+                }
+                
+                function addOrdered() {
+                    var size = prompt("Enter the size of the list: ")
+                    var input = [];
+                    
+                    for(var i=0; i < size; i++) {
+                        input.push(prompt("Enter your list individually and click enter"));
+                    }
+                    page += "<ol>";
+                    for(var i=0; i<5;i++){
+                        page += "<li>" + input[i] + "</li>";
+                    }
+                    
+                    page += "</ol>";
+                }
+
+                function addItalic() {
+                    var input = prompt("Enter the text you want to Italicize");
+                    page += "<i>" + input + "</i>";
+                }
+
+                function addQuotation() {
+                    var input = prompt("Enter the text you want to put in quotation");
+                    page += "<q>" + input + "</q>";
+                }
+
+                function closeWindow() {
+                    myWindow.close();
+                }
+
+                function addExample() {
+                    page += "<button onclick='window.open(" + "\"" + "http://www.w3schools.com/jsref/met_win_open.asp" + "\"" + ")'>Examples</button>";
+                }
+        </script>
+    </body>
+</html>
